@@ -1,15 +1,15 @@
-function Node(value = null, next = null) {
-  return { value, next };
+function Node(value = null, nextNode = null) {
+  return { value, nextNode };
 }
 
 function LinkedList(root) {
   const list = { ...root };
 
   function append(value, node) {
-    if (node.next !== null) {
-      append(value, node.next);
+    if (node.nextNode !== null) {
+      append(value, node.nextNode);
     } else {
-      node.next = Node(value);
+      node.nextNode = Node(value);
     }
   }
 
