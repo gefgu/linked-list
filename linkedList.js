@@ -3,13 +3,17 @@ function Node(value = null, next = null) {
 }
 
 function LinkedList(root) {
-  const linkedList = { ...root };
+  const list = { ...root };
 
-  linkedList.append = (value) => {
-    linkedList.next = Node(value);
-  };
+  function append(value, node) {
+    if (node.next !== null) {
+      append(value, node.next);
+    } else {
+      node.next = Node(value);
+    }
+  }
 
-  return linkedList;
+  return { list, append: (value) => append(value, list) };
 }
 
 export { Node, LinkedList };

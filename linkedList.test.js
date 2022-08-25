@@ -5,12 +5,20 @@ test("Node Factory working", () => {
 });
 
 test("LinkedList Factory working", () => {
-  expect(LinkedList(Node(24)).value).toStrictEqual(24);
+  expect(LinkedList(Node(24)).list.value).toStrictEqual(24);
 });
 
-test("LinkedList append", () => {
+test("LinkedList append size 1", () => {
   const linkedList = LinkedList(Node(13));
   linkedList.append(32);
 
-  expect(linkedList.next.value).toStrictEqual(32);
+  expect(linkedList.list.next.value).toStrictEqual(32);
+});
+
+test("LinkedList append size 2", () => {
+  const linkedList = LinkedList(Node(13));
+  linkedList.append(32);
+  linkedList.append(15);
+
+  expect(linkedList.list.next.next.value).toStrictEqual(15);
 });
