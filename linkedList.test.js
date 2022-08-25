@@ -5,5 +5,12 @@ test("Node Factory working", () => {
 });
 
 test("LinkedList Factory working", () => {
-  expect(LinkedList(Node(24))).toStrictEqual({ value: 24, next: null });
+  expect(LinkedList(Node(24)).value).toStrictEqual(24);
+});
+
+test("LinkedList append", () => {
+  const linkedList = LinkedList(Node(13));
+  linkedList.append(32);
+
+  expect(linkedList.next.value).toStrictEqual(32);
 });

@@ -3,7 +3,13 @@ function Node(value = null, next = null) {
 }
 
 function LinkedList(root) {
-  return root;
+  const linkedList = { ...root };
+
+  linkedList.append = (value) => {
+    linkedList.next = Node(value);
+  };
+
+  return linkedList;
 }
 
 export { Node, LinkedList };
