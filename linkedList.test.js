@@ -1,5 +1,5 @@
 import { Node, LinkedList } from "./linkedList";
 
-test("Factories working", () => {
-  expect(1).toBe(1);
+test("Node Factory working", () => {
+  expect(Node(123)).toStrictEqual({ value: 123, next: null });
 });
