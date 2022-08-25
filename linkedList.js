@@ -3,7 +3,7 @@ function Node(value = null, next = null) {
 }
 
 function LinkedList(root) {
-  return { root };
+  return root;
 }
 
 export { Node, LinkedList };
