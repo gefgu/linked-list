@@ -25,15 +25,15 @@ test("LinkedList append size 2", () => {
 
 test("LinkedList prepend size 1", () => {
   const linkedList = LinkedList(Node(13));
-  linkedList.append(32);
+  linkedList.prepend(32);
 
-  expect(linkedList.list.nextNode.value).toStrictEqual(32);
+  expect(linkedList.list.value).toStrictEqual(32);
 });
 
 test("LinkedList prepend size 2", () => {
   const linkedList = LinkedList(Node(13));
-  linkedList.append(32);
-  linkedList.append(15);
+  linkedList.prepend(32);
+  linkedList.prepend(15);
 
-  expect(linkedList.list.nextNode.nextNode.value).toStrictEqual(15);
+  expect(linkedList.list.value).toStrictEqual(15);
 });
