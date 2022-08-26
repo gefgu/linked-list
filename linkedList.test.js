@@ -41,3 +41,19 @@ test("LinkedList size 3", () => {
 
   expect(linkedList.size).toStrictEqual(2);
 });
+
+test("LinkedList tail prepend", () => {
+  const linkedList = LinkedList();
+  linkedList.prepend(32);
+  linkedList.prepend(15);
+
+  expect(linkedList.tail.value).toStrictEqual(32);
+});
+
+test("LinkedList tail append", () => {
+  const linkedList = LinkedList();
+  linkedList.append(32);
+  linkedList.append(15);
+
+  expect(linkedList.tail.value).toStrictEqual(15);
+});

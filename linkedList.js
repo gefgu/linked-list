@@ -5,17 +5,20 @@ function Node(value = null, nextNode = null) {
 function LinkedList() {
   let head;
   let size = 0;
+  let tail;
 
   function append(value, node = null) {
     node = node || this.head;
+    const newNode = Node(value);
     if (!this.head || this.head === undefined) {
-      this.head = Node(value);
+      this.head = newNode;
     } else if (node.nextNode !== null) {
       append(value, node.nextNode);
     } else {
-      node.nextNode = Node(value);
+      node.nextNode = newNode;
       this.size++;
     }
+    this.tail = newNode;
   }
 
   function prepend(value) {
@@ -25,6 +28,9 @@ function LinkedList() {
       value,
       originalValue ? Node(originalValue, originalNextNode) : null
     );
+    if (!this?.head) {
+      this.tail = newNode;
+    }
     this.head = newNode;
     this.size++;
   }
@@ -32,6 +38,7 @@ function LinkedList() {
   return {
     head,
     size,
+    tail,
     append,
     prepend,
   };
