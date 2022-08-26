@@ -34,11 +34,20 @@ test("LinkedList prepend size 2", () => {
   expect(linkedList.head.value).toStrictEqual(15);
 });
 
-test("LinkedList size 3", () => {
+test("LinkedList prepend size 3", () => {
   const linkedList = LinkedList();
   linkedList.prepend(32);
   linkedList.prepend(15);
   linkedList.prepend(15);
+
+  expect(linkedList.size).toStrictEqual(3);
+});
+
+test("LinkedList append size 3", () => {
+  const linkedList = LinkedList();
+  linkedList.append(32);
+  linkedList.append(15);
+  linkedList.append(15);
 
   expect(linkedList.size).toStrictEqual(3);
 });

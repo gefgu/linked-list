@@ -12,7 +12,7 @@ function LinkedList() {
     const newNode = Node(value);
     if (!this?.head || this.head === undefined) {
       this.head = newNode;
-      // add increase in size here
+      this.size++;
     } else if (node.nextNode !== null) {
       this.append(value, node.nextNode);
     } else {
