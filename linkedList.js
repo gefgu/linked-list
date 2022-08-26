@@ -47,6 +47,20 @@ function LinkedList() {
     return node.value;
   }
 
+  function pop() {
+    let node = this.head;
+    while (node.nextNode) {
+      if (
+        node.nextNode.value === this.tail.value &&
+        node.nextNode.nextNode === null
+      )
+        break;
+      node = node.nextNode;
+    }
+    node.nextNode = null;
+    this.tail = node;
+  }
+
   return {
     head,
     size,
@@ -54,6 +68,7 @@ function LinkedList() {
     append,
     prepend,
     at,
+    pop,
   };
 }
 
