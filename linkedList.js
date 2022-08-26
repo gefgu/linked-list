@@ -10,10 +10,11 @@ function LinkedList() {
   function append(value, node = null) {
     node = node || this.head;
     const newNode = Node(value);
-    if (!this.head || this.head === undefined) {
+    if (!this?.head || this.head === undefined) {
       this.head = newNode;
+      // add increase in size here
     } else if (node.nextNode !== null) {
-      append(value, node.nextNode);
+      this.append(value, node.nextNode);
     } else {
       node.nextNode = newNode;
       this.size++;
@@ -35,12 +36,24 @@ function LinkedList() {
     this.size++;
   }
 
+  function at(index) {
+    let node = this.head;
+    for (; index >= 0; index--) {
+      node = node.nextNode;
+      if (node === null) {
+        return -1;
+      }
+    }
+    return node.value;
+  }
+
   return {
     head,
     size,
     tail,
     append,
     prepend,
+    at,
   };
 }
 

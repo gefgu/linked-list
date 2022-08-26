@@ -38,8 +38,9 @@ test("LinkedList size 3", () => {
   const linkedList = LinkedList();
   linkedList.prepend(32);
   linkedList.prepend(15);
+  linkedList.prepend(15);
 
-  expect(linkedList.size).toStrictEqual(2);
+  expect(linkedList.size).toStrictEqual(3);
 });
 
 test("LinkedList tail prepend", () => {
@@ -56,4 +57,14 @@ test("LinkedList tail append", () => {
   linkedList.append(15);
 
   expect(linkedList.tail.value).toStrictEqual(15);
+});
+
+test("LinkedList at function", () => {
+  const linkedList = LinkedList();
+  linkedList.append(32);
+  linkedList.append(15);
+  linkedList.append(16);
+  linkedList.append(17);
+
+  expect(linkedList.at(2)).toStrictEqual(17);
 });
