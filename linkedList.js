@@ -70,6 +70,17 @@ function LinkedList() {
     }
   }
 
+  function find(value) {
+    let node = this.head;
+    let index = 0;
+    while (node?.value) {
+      if (node.value === value) return index;
+      if (node.nextNode === null) return -1;
+      node = node.nextNode;
+      index++;
+    }
+  }
+
   return {
     head,
     size,
@@ -79,6 +90,7 @@ function LinkedList() {
     at,
     pop,
     contains,
+    find,
   };
 }
 

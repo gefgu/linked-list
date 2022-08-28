@@ -108,3 +108,23 @@ test("LinkedList contains function -> false", () => {
 
   expect(linkedList.contains(18)).toBe(false);
 });
+
+test("LinkedList find function -> exists", () => {
+  const linkedList = LinkedList();
+  linkedList.append(32);
+  linkedList.append(15);
+  linkedList.append(16);
+  linkedList.append(17);
+
+  expect(linkedList.find(16)).toBe(2);
+});
+
+test("LinkedList find function -> no exists", () => {
+  const linkedList = LinkedList();
+  linkedList.append(32);
+  linkedList.append(15);
+  linkedList.append(16);
+  linkedList.append(17);
+
+  expect(linkedList.find(18)).toBe(-1);
+});
