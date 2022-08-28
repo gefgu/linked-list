@@ -61,6 +61,15 @@ function LinkedList() {
     this.tail = node;
   }
 
+  function contains(value) {
+    let node = this.head;
+    while (node?.value) {
+      if (node.value === value) return true;
+      if (node.nextNode === null) return false;
+      node = node.nextNode;
+    }
+  }
+
   return {
     head,
     size,
@@ -69,6 +78,7 @@ function LinkedList() {
     prepend,
     at,
     pop,
+    contains,
   };
 }
 

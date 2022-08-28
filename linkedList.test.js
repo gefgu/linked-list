@@ -84,7 +84,27 @@ test("LinkedList pop function", () => {
   linkedList.append(15);
   linkedList.append(16);
   linkedList.append(17);
-  linkedList.pop()
+  linkedList.pop();
 
   expect(linkedList.tail.value).toStrictEqual(16);
+});
+
+test("LinkedList contains function -> true", () => {
+  const linkedList = LinkedList();
+  linkedList.append(32);
+  linkedList.append(15);
+  linkedList.append(16);
+  linkedList.append(17);
+
+  expect(linkedList.contains(16)).toBe(true);
+});
+
+test("LinkedList contains function -> false", () => {
+  const linkedList = LinkedList();
+  linkedList.append(32);
+  linkedList.append(15);
+  linkedList.append(16);
+  linkedList.append(17);
+
+  expect(linkedList.contains(18)).toBe(false);
 });
