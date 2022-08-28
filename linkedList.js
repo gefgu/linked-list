@@ -81,6 +81,22 @@ function LinkedList() {
     }
   }
 
+  function toString() {
+    let node = this.head;
+    let string = "";
+    while (node?.value) {
+      string += `( ${node.value} )`;
+
+      string += " -> ";
+      if (node.nextNode === null) {
+        string += "null";
+        break;
+      }
+      node = node.nextNode;
+    }
+    return string;
+  }
+
   return {
     head,
     size,
@@ -91,6 +107,7 @@ function LinkedList() {
     pop,
     contains,
     find,
+    toString,
   };
 }
 

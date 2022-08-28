@@ -128,3 +128,11 @@ test("LinkedList find function -> no exists", () => {
 
   expect(linkedList.find(18)).toBe(-1);
 });
+
+test("LinkedList toString()", () => {
+  const linkedList = LinkedList();
+  linkedList.append(32);
+  linkedList.append(15);
+
+  expect(linkedList.toString()).toBe("( 32 ) -> ( 15 ) -> null");
+});
