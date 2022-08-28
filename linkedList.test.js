@@ -136,3 +136,15 @@ test("LinkedList toString()", () => {
 
   expect(linkedList.toString()).toBe("( 32 ) -> ( 15 ) -> null");
 });
+
+
+test("LinkedList insert at", () => {
+  const linkedList = LinkedList();
+  linkedList.append(32);
+  linkedList.append(14);
+  linkedList.append(15);
+  linkedList.append(16);
+  linkedList.insertAt(17, 2);
+
+  expect(linkedList.find(17)).toBe(2);
+});

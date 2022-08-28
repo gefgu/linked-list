@@ -97,6 +97,24 @@ function LinkedList() {
     return string;
   }
 
+  function insertAt(value, index) {
+    let node = this.head;
+    for (let i = 0; i < index-1; i++) {
+      node = node.nextNode;
+    }
+
+    const originalValue = node?.value;
+    const originalNextNode = node?.nextNode;
+    const newNode = Node(
+      value,
+      originalValue ? Node(originalValue, originalNextNode) : null
+    );
+
+    node.nextNode = newNode;
+
+    this.size++;
+  }
+
   return {
     head,
     size,
@@ -108,6 +126,7 @@ function LinkedList() {
     contains,
     find,
     toString,
+    insertAt,
   };
 }
 
