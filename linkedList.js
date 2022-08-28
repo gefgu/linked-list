@@ -116,6 +116,18 @@ function LinkedList() {
     this.size++;
   }
 
+  function removeAt(index) {
+    let node = this.head;
+    for (let i = 0; i < index - 1; i++) {
+      if (!node?.nextNode) return;
+      node = node.nextNode;
+    }
+
+    node.nextNode = node.nextNode.nextNode;
+
+    this.size--;
+  }
+
   return {
     head,
     size,
@@ -128,6 +140,7 @@ function LinkedList() {
     find,
     toString,
     insertAt,
+    removeAt,
   };
 }
 

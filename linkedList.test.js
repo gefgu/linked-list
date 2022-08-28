@@ -148,3 +148,25 @@ test("LinkedList insert at", () => {
 
   expect(linkedList.find(17)).toBe(2);
 });
+
+test("LinkedList remove at", () => {
+  const linkedList = LinkedList();
+  linkedList.append(32); // 0
+  linkedList.append(14); // 1
+  linkedList.append(15); // 2
+  linkedList.append(16);
+  linkedList.removeAt(2);
+
+  expect(linkedList.contains(15)).toBe(false);
+});
+
+test("LinkedList remove at", () => {
+  const linkedList = LinkedList();
+  linkedList.append(32); // 0
+  linkedList.append(14); // 1
+  linkedList.append(15); // 2
+  linkedList.append(16);
+  linkedList.removeAt(5);
+
+  expect(linkedList.contains(15)).toBe(true);
+});
