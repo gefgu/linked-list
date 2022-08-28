@@ -59,6 +59,7 @@ function LinkedList() {
     }
     node.nextNode = null;
     this.tail = node;
+    this.size--;
   }
 
   function contains(value) {
@@ -99,7 +100,7 @@ function LinkedList() {
 
   function insertAt(value, index) {
     let node = this.head;
-    for (let i = 0; i < index-1; i++) {
+    for (let i = 0; i < index - 1; i++) {
       node = node.nextNode;
     }
 
